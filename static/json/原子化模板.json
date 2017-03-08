@@ -1,0 +1,57 @@
+{
+  "result": 0,
+  "msg": "成功",
+  "data": {
+    "lb":[],
+    "floor":[
+      {
+      "title":"楼层1",
+      "id":"1",
+      "data":[
+        {
+          "type":"1",
+          "img_data":[{
+          	  "cid":"1",
+	          "img_url":"url1",
+	          "link_url":"link1",
+	          "main_title":"主标题",
+	          "sub_title":"副标题"
+          }]
+        },
+        {
+          "type":"3",
+          "img_data":[{
+          	  "cid":"1",
+	          "img_url":"url1",
+	          "link_url":"link1",
+	          "main_title":"主标题",
+	          "sub_title":"副标题"
+          },{
+          	  "cid":"2",
+	          "img_url":"url2",
+	          "link_url":"link2",
+	          "main_title":"主标题",
+	          "sub_title":"副标题"
+          },{
+          	  "cid":"3",
+	          "img_url":"url3",
+	          "link_url":"link3",
+	          "main_title":"主标题",
+	          "sub_title":"副标题"
+          }]
+        },
+        {
+          "type":"1",
+          "img_data":[{
+          	  "cid":"1",
+	          "img_url":"url1",
+	          "link_url":"link1",
+	          "main_title":"主标题",
+	          "sub_title":"副标题"
+          }]
+        }
+      ]
+    }
+    ]
+  }
+}

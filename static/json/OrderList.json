@@ -1,0 +1,15 @@
+{
+  "result": 0,
+  "msg": "成功",
+  "data": [
+    {
+    	"order_id":"123456",
+    	"fullname":"“传世之宝”金银元宝",
+    	"order_type":"0",
+    	"order_time":"2016/03/18 9:20",
+    	"sku":"100g",
+    	"num":"2",
+    	"left_time":"30000",
+    }
+  ]
+}

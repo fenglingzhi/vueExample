@@ -1,0 +1,59 @@
+{
+  "result": 0,
+  "msg": "成功",
+  "data": [
+    {
+        "pro_id":"2017022801",
+        "img_url":"http://www.95599.cn/jiangsu/intro/jsweixintest/ABCWeJS/dist/static/img/mall/product.png",
+        "fullname":"“传世之宝”金银元宝",
+        "description":"3个大红包，6大宝贝，6重心意",
+        "pro_status":"0",
+        "sale_price":"65.00",
+        "qty":"10",
+        "price_name":"一口价",
+        "price_unit":"元/件",
+        "sold_qty":"120",
+        "free":"0",
+        "other":"该商品不适用积分兑"
+    },{
+        "pro_id":"2017022802",
+        "img_url":"http://www.95599.cn/jiangsu/intro/jsweixintest/ABCWeJS/dist/static/img/mall/product.png",
+        "fullname":"“传世之宝”金银元宝",
+        "description":"3个大红包，6大宝贝，6重心意",
+        "pro_status":"1",
+        "sale_price":"280",
+        "qty":"10",
+        "price_name":"参考价",
+        "price_unit":"元/盎司",
+        "sold_qty":"120",
+        "free":"10.54",
+        "other":"该商品不适用积分兑"
+    },{
+        "pro_id":"2017022803",
+        "img_url":"http://www.95599.cn/jiangsu/intro/jsweixintest/ABCWeJS/dist/static/img/mall/product.png",
+        "fullname":"“传世之宝”金银元宝",
+        "description":"3个大红包，6大宝贝，6重心意",
+        "pro_status":"2",
+        "sale_price":"65.00",
+        "qty":"0",
+        "price_name":"一口价",
+        "price_unit":"元/件",
+        "sold_qty":"170",
+        "free":"0",
+        "other":"该商品不适用积分兑"
+    },{
+        "pro_id":"2017022804",
+        "img_url":"http://www.95599.cn/jiangsu/intro/jsweixintest/ABCWeJS/dist/static/img/mall/product.png",
+        "fullname":"“传世之宝”金银元宝",
+        "description":"3个大红包，6大宝贝，6重心意",
+        "pro_status":"0",
+        "price_name":"一口价",
+        "price_unit":"元/件",
+        "qty":"10",
+        "price_style":"1",
+        "sold_qty":"120",
+        "free":"0",
+        "other":"该商品不适用积分兑"
+    }
+  ]
+}

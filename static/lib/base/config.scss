@@ -1,0 +1,25 @@
+$primary-color: #f9532d;
+$backIcon-color: #f9532d;
+$btn-orange-color: #f9532d;
+$btn-green-color: #2DC1B5;
+
+$purchase-btn:#f4b732;
+$advance-btn:#a4cd3d;
+$soldout-btn:#d7d7d7;
+$common-font-color:rgb(76,80,82);
+
+.mint-header .mintui.mintui-back{
+	color:$backIcon-color;
+}
+
+.btn-orange{
+  background-color: $btn-orange-color !important;
+  color:white !important;
+  height: 1.333333rem !important;
+}
+
+.btn-green{
+	background-color: $btn-green-color !important;
+  	color:white !important;
+  	height: 48px !important;
+}

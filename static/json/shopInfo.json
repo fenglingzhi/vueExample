@@ -1,0 +1,62 @@
+{
+	"result": 0,
+	"Msg": "",
+	"Data":[
+		{
+			"name":"版本",
+			"code":"edition",
+			"value":[{
+				"text":"iPhone 6s",
+				"type":"text",
+				"code":"9001"
+			},{
+				"text":"iPhone 6s Plus",
+				"type":"text",
+				"code":"9002"
+			}]
+		},
+		{
+			"name":"网络类型",
+			"code":"netType",
+			"value":[{
+				"text":"无需合约版",
+				"type":"text",
+				"code":"10001"
+			}]
+		},
+		{
+			"name":"机身颜色",
+			"code":"phoneColor",
+			"value":[{
+				"text":"http://img.alicdn.com/bao/uploaded/i1/TB1vPjVNXXXXXcMaXXXSXic.VXX_111630.jpg_40x40q90.jpg",
+				"type":"img",
+				"code":"10002"
+			},{
+				"text":"http://img.alicdn.com/bao/uploaded/i5/TB1MdogNXXXXXXwXFXXyM9b.VXX_111625.jpg_40x40q90.jpg",
+				"type":"img",
+				"code":"10003"
+			},{
+				"text":"http://img.alicdn.com/bao/uploaded/i1/TB13mwjNXXXXXavXpXXqB5d.VXX_111637.jpg_40x40q90.jpg",
+				"type":"img",
+				"code":"10004"
+			},{
+				"text":"http://img.alicdn.com/bao/uploaded/i2/TB1Q_f4NXXXXXXjXVXXtXKd.VXX_111634.jpg_40x40q90.jpg",
+				"type":"img",
+				"code":"10005"
+			}]
+		},
+		{
+			"name":"存储容量",
+			"code":"storage",
+			"value":[{
+				"text":"32GB",
+				"type":"text",
+				"code":"11001"
+			},{
+				"text":"64GB",
+				"type":"text",
+				"code":"11002"
+			}]
+		}
+	]
+}

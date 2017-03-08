@@ -1,0 +1,57 @@
+{
+  "result": 0,
+  "msg": "成功",
+  "data": [
+    {
+      "title":"常用业务",
+      "data":[
+        {"img_url":"http://www.95599.cn/jiangsu/intro/jsweixintest/ABCWeJS/dist/static/img/service/zhcx@2x.png","link_url":"www.baidu.com","title":"账户查询","auth":"2"},
+        {"img_url":"http://www.95599.cn/jiangsu/intro/jsweixintest/ABCWeJS/dist/static/img/service/ycl@2x.png","link_url":"www.baidu.com","title":"预处理业务","auth":"2"},
+        {"img_url":"http://www.95599.cn/jiangsu/intro/jsweixintest/ABCWeJS/dist/static/img/service/tjcx@2x.png","link_url":"www.baidu.com","title":"推荐促销","auth":"2"},
+        {"img_url":"http://www.95599.cn/jiangsu/intro/jsweixintest/ABCWeJS/dist/static/img/service/fjwd@2x.png","link_url":"www.baidu.com","title":"附近的网点","auth":"2"}
+      ]
+    },
+    {
+      "title":"账户查询",
+      "data":[
+        {"img_url":"http://www.95599.cn/jiangsu/intro/jsweixintest/ABCWeJS/dist/static/img/service/yecx@2x.png","link_url":"www.baidu.com","title":"余额查询","auth":"2"},
+        {"img_url":"http://www.95599.cn/jiangsu/intro/jsweixintest/ABCWeJS/dist/static/img/service/mxcx@2x.png","link_url":"www.baidu.com","title":"明细查询","auth":"2"}
+      ]
+    },
+    {
+      "title":"预处理业务",
+      "data":[
+        {"img_url":"http://www.95599.cn/jiangsu/intro/jsweixintest/ABCWeJS/dist/static/img/service/pdjh@2x.png","link_url":"www.baidu.com","title":"排队叫号","auth":"2"},
+        {"img_url":"http://www.95599.cn/jiangsu/intro/jsweixintest/ABCWeJS/dist/static/img/service/kzck@2x.png","link_url":"www.baidu.com","title":"卡折存款","auth":"2"},
+        {"img_url":"http://www.95599.cn/jiangsu/intro/jsweixintest/ABCWeJS/dist/static/img/service/chuxukaihu@2x.png","link_url":"www.baidu.com","title":"储蓄开户","auth":"2"},
+        {"img_url":"http://www.95599.cn/jiangsu/intro/jsweixintest/ABCWeJS/dist/static/img/service/geren@2x.png","link_url":"www.baidu.com","title":"个人兑汇","auth":"2"},
+        {"img_url":"http://www.95599.cn/jiangsu/intro/jsweixintest/ABCWeJS/dist/static/img/service/guashi@2x.png","link_url":"www.baidu.com","title":"挂失业务","auth":"2"}
+      ]
+    },
+    {
+      "title":"信用卡业务",
+      "data":[
+        {"img_url":"http://www.95599.cn/jiangsu/intro/jsweixintest/ABCWeJS/dist/static/img/service/xinyongka@2x.png","link_url":"www.baidu.com","title":"申请办卡","auth":"2"},
+        {"img_url":"http://www.95599.cn/jiangsu/intro/jsweixintest/ABCWeJS/dist/static/img/service/bkjdcx@2x.png","link_url":"www.baidu.com","title":"办卡进度查询","auth":"2"}
+      ]
+    },
+    {
+      "title":"定期与理财",
+      "data":[
+        {"img_url":"http://www.95599.cn/jiangsu/intro/jsweixintest/ABCWeJS/dist/static/img/service/lccpgm@2x.png","link_url":"www.baidu.com","title":"理财产品购买","auth":"2"},
+        {"img_url":"http://www.95599.cn/jiangsu/intro/jsweixintest/ABCWeJS/dist/static/img/service/lccpcx@2x.png","link_url":"www.baidu.com","title":"理财产品持有查询","auth":"2"},
+        {"img_url":"http://www.95599.cn/jiangsu/intro/jsweixintest/ABCWeJS/dist/static/img/service/cdq@2x.png","link_url":"www.baidu.com","title":"定期存","auth":"2"},
+        {"img_url":"http://www.95599.cn/jiangsu/intro/jsweixintest/ABCWeJS/dist/static/img/service/dqckcycx@2x.png","link_url":"www.baidu.com","title":"定期存款持有查询","auth":"2"}
+      ]
+    },
+    {
+      "title":"工具",
+      "data":[
+        {"img_url":"http://www.95599.cn/jiangsu/intro/jsweixintest/ABCWeJS/dist/static/img/service/jrzxcx@2x.png","link_url":"www.baidu.com","title":"金融资讯查询","auth":"2"},
+        {"img_url":"http://www.95599.cn/jiangsu/intro/jsweixintest/ABCWeJS/dist/static/img/service/wb@2x.png","link_url":"www.baidu.com","title":"农行微博","auth":"2"},
+        {"img_url":"http://www.95599.cn/jiangsu/intro/jsweixintest/ABCWeJS/dist/static/img/service/nh@2x.png","link_url":"www.baidu.com","title":"农行掌银","auth":"2"},
+        {"img_url":"http://www.95599.cn/jiangsu/intro/jsweixintest/ABCWeJS/dist/static/img/service/kefu@2x.png","link_url":"www.baidu.com","title":"人工客服","auth":"2"}
+      ]
+    }
+  ]
+}

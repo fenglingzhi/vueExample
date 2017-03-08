@@ -1,0 +1,16 @@
+{
+	"result": 0,
+	"msg": "",
+	"data":[
+      {"label":"玄武区","value":"001"},
+      {"label":"江宁区","value":"002"},
+      {"label":"白下区","value":"003"},
+      {"label":"秦淮区","value":"004"},
+      {"label":"建邺区","value":"005"},
+      {"label":"鼓楼区","value":"006"},
+      {"label":"浦口区","value":"007"},
+      {"label":"下关区","value":"008"},
+      {"label":"六合区","value":"009"}
+    ]
+	
+}

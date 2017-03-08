@@ -1,0 +1,23 @@
+{
+  "result": 0,
+  "msg": "成功",
+  "data": [
+    {
+      "card_icon":"http://www.95599.cn/jiangsu/intro/jsweixintest/ABCWeJS/dist/static/img/payflat/nongh@2x.png",
+      "card_name":"中国农业银行",
+      "card_num":"(6090)"
+    },{
+      "card_icon":"http://www.95599.cn/jiangsu/intro/jsweixintest/ABCWeJS/dist/static/img/payflat/jianh@2x.png",
+      "card_name":"中国建设银行",
+      "card_num":"(6090)"
+    },{
+      "card_icon":"http://www.95599.cn/jiangsu/intro/jsweixintest/ABCWeJS/dist/static/img/payflat/jiaotong@2x.png",
+      "card_name":"交通银行",
+      "card_num":"(6090)"
+    },{
+      "card_icon":"http://www.95599.cn/jiangsu/intro/jsweixintest/ABCWeJS/dist/static/img/payflat/zhaos@2x.png",
+      "card_name":"招商银行",
+      "card_num":"(6090)"
+    }
+  ]
+}

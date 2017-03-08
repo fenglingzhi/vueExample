@@ -1,0 +1,28 @@
+{
+  "result": 0,
+  "msg": "成功",
+  "data": {
+    "userInfo":{
+      "username":"折原临",
+      "auth":"2"
+    },
+    "areaInfo":{
+      "city":"南京市",
+      "bank_name":"中国农业银行南京分行"
+    },
+    "swipe":{
+      "switch_time":"2000",
+      "data":[
+        {"img_url":"http://www.95599.cn/jiangsu/intro/jsweixintest/ABCWeJS/dist/static/img/home/图层-22.png",
+       "link_url":"www.baidu.com",
+       "auth":"0"
+      },{"img_url":"http://www.95599.cn/jiangsu/intro/jsweixintest/ABCWeJS/dist/static/img/home/图层-22.png",
+       "link_url":"www.baidu.com",
+       "auth":"0"
+      },{"img_url":"http://www.95599.cn/jiangsu/intro/jsweixintest/ABCWeJS/dist/static/img/home/图层-22.png",
+       "link_url":"www.baidu.com",
+       "auth":"0"
+      }]
+    }
+  }
+}
