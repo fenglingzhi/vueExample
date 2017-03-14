@@ -1,6 +1,6 @@
 <!-- 商品轮播图 -->
 <template>
-	<div class="header">
+	<div class="good-header">
         <swiper :options="activityOption">
 		       <swiper-slide v-for="item in swipe.data">
 		        <img class="item-image" :src="item.img_url">
@@ -24,7 +24,7 @@
 	}
 </script>
 <style lang='scss'>
-	.header{
+	.good-header{
 		.swiper-container{
 			height:5.013333rem;
         	width: 10.0rem;

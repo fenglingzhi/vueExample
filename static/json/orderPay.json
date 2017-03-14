@@ -3,7 +3,7 @@
 	"msg": "",
 	"data":[
       {"label":"农行快捷支付","value":"0"},
-      {"label":"商易付","value":"1"}
+      {"label":"银联卡支付","value":"1"}
     ]
 	
 }

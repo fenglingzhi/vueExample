@@ -1,15 +1,54 @@
 {
   "result": 0,
   "msg": "成功",
-  "data": [
+  "data":[
+      {
+      "order_id":"123456",
+      "goodid":"12345",
+      "fullname":"“传世之宝”金银元宝",
+      "order_type":"0",
+      "order_time":"2016/03/18 9:20",
+      "thumb":"http://www.95599.cn/jiangsu/intro/jsweixintest/ABCWeJS/dist/static/img/order/thumb-2@2x.png",
+      "sku":["100g"],
+      "num":"2",
+      "allPrice":"159",
+      "left_time":"605"
+    },
     {
-    	"order_id":"123456",
-    	"fullname":"“传世之宝”金银元宝",
-    	"order_type":"0",
-    	"order_time":"2016/03/18 9:20",
-    	"sku":"100g",
-    	"num":"2",
-    	"left_time":"30000",
+      "order_id":"123456",
+      "goodid":"12345",
+      "fullname":"“传世之宝”金银元宝",
+      "order_type":"1",
+      "order_time":"2016/03/18 9:20",
+      "thumb":"http://www.95599.cn/jiangsu/intro/jsweixintest/ABCWeJS/dist/static/img/order/thumb-2@2x.png",
+      "sku":["100g"],
+      "num":"2",
+      "allPrice":"159",
+      "left_time":""
+    },
+    {
+      "order_id":"123456",
+      "goodid":"12345",
+      "fullname":"“传世之宝”金银元宝",
+      "order_type":"2",
+      "order_time":"2016/03/18 9:20",
+      "thumb":"http://www.95599.cn/jiangsu/intro/jsweixintest/ABCWeJS/dist/static/img/order/thumb-2@2x.png",
+      "sku":["100g"],
+      "num":"2",
+      "allPrice":"159",
+      "left_time":""
+    },
+    {
+      "order_id":"123456",
+      "goodid":"12345",
+      "fullname":"“传世之宝”金银元宝",
+      "order_type":"3",
+      "order_time":"2016/03/18 9:20",
+      "thumb":"http://www.95599.cn/jiangsu/intro/jsweixintest/ABCWeJS/dist/static/img/order/thumb-2@2x.png",
+      "sku":["100g"],
+      "num":"2",
+      "allPrice":"159",
+      "left_time":""
     }
-  ]
+    ]
 }

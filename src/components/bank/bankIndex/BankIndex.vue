@@ -126,7 +126,7 @@
 					        
 					    },
 					    fail: function(){
-
+					    	alert('请打开定位服务，获取更好的服务')
 					    }
 				    })
 			    })
@@ -143,6 +143,10 @@
 				        		MessageBox.confirm('是否切换到当前城市：'+resp.data.data.city,'温馨提示').then(action => {
 									vm.$store.dispatch('FETCH_BANK_BUSINESS',body).then(()=>{
 										let business = vm.$store.getters.activeBankBusiness
+										// 保存当前城市信息
+										let allInfo = JSON.parse(sessionStorage.getItem('wx_info'))
+						        		allInfo.defAreaCode=resp.data.data.code
+						        		sessionStorage.setItem('wx_info',JSON.stringify(allInfo))
 										vm.assignment(business)
 										// 强制更新用户信息
 										vm.$store.dispatch('FETCH_USER_INFO').then(()=>{
@@ -180,7 +184,25 @@
 			getMore(id){
 				console.log(id)
 				this.$router.push({ name: 'FloorMore'})
+			},
+			update_wx_title(title) {
+			    document.title = title;
+			    var mobile = navigator.userAgent.toLowerCase();
+			    if (/iphone|ipad|ipod/.test(mobile)) {
+			        var iframe = document.createElement('iframe');
+			        iframe.style.visibility = 'hidden';
+			        iframe.setAttribute('src', 'http://www.95599.cn/jiangsu/intro/jsweixintest/ABCWeJS/dist/static/img/1.jpg');
+			        var iframeCallback = function() {
+			            setTimeout(function() {
+			                iframe.removeEventListener('load', iframeCallback);
+			                document.body.removeChild(iframe);
+			            }, 0);
+			        };
+			        iframe.addEventListener('load', iframeCallback);
+			        document.body.appendChild(iframe);
+			    }
 			}
+
 		},
 		computed:{
 		    ...mapGetters([
@@ -189,7 +211,7 @@
 		    ])
 		},
 		created(){
-			document.title = "微银行"
+			this.update_wx_title("微银行")
 			this.loadBankBus()
 				
 			

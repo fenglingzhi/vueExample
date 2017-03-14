@@ -69,7 +69,7 @@
             <div class="number_count">
               <span class="decrease icon iconfont icon-minus" :class="{'disable_count':curNum == 1}" v-tap.prevent="{methods :minusPro}"></span>
               <span class="num">{{curNum}}</span>
-              <span class="increase  icon iconfont icon-plus" :class="{'disable_count':curNum == detailInfo.qty}" v-tap.prevent="{methods :plusPro}"></span>
+              <span class="increase  icon iconfont icon-plus" :class="{'disable_count':curNum == depqty}" v-tap.prevent="{methods :plusPro}"></span>
             </div>
           </div>
         </div>
@@ -112,7 +112,7 @@
             curNum:1,//选择的数量
             deposit:'',// sku单价
             depfree:'0',// sku优惠
-            depqty:'',// sku库存
+            depqty:0,// sku库存
             pos_top:0,//固定背景
             activityOption:{
               autoplay: 4000,
@@ -140,6 +140,9 @@
           vm.deposit = params.type.price
           vm.depfree = params.type.free
           vm.depqty = params.type.qty
+          if(vm.curNum>vm.depqty){
+            vm.curNum = parseInt(vm.depqty)
+          }
         },
         loadGoodsDetail(){
           let vm = this
@@ -171,7 +174,7 @@
         },
         plusPro(){
           let vm = this
-          if(vm.curNum<vm.detailInfo.qty){
+          if(vm.curNum<vm.depqty){
             vm.curNum+=1
           }
         },

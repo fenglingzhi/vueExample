@@ -1,0 +1,26 @@
+{
+	"result": 0,
+	"msg": "",
+	"data":{
+		"orderId":"123456",
+	    "ProductCode":"12345",
+	    "ProductName":"“传世之宝”金银元宝",
+	    "OrderState":"0",
+	    "CreatDate":"2016/03/18 9:20",
+	    "ImgSmallUrl":"http://www.95599.cn/jiangsu/intro/jsweixintest/ABCWeJS/dist/static/img/order/thumb-2@2x.png",
+	    "sku":["100g"],
+	    "Qty":"2",
+	    "Total":"159",
+	    "left_time":"605",
+	    "GetterPhone":"15705213522",
+	    "GetterIdCardNum":"32048319991343891",
+	    "GetterName":"折原临也",
+	    "ExchangeBranch":"中国农业银行南京江宁支行",
+	    "ExchangePlace":"江苏省南京市江宁区胜利路102号",
+	    "ExchangePhone":"025-52102685",
+	    "AppointmentExchangeDate":"2017年5月26号",
+	    "ContactPhone":"15705213522",
+	    "PaymentWay":"0",
+	    "Remark":"黄金100g"
+    }
+}

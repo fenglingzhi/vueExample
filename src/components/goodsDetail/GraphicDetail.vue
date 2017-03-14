@@ -12,7 +12,7 @@
 	    		<span class="title_en">PRODUCT MANUAL</span>
 	    	</div>
 	    	<div class="infoContent">
-	    		{{goodsGraphic.proIntro}}
+	    		<!-- {{goodsGraphic.proIntro}} -->
 	    	</div>
 	    </div>
 	    
@@ -23,7 +23,8 @@
 	    		<span class="title_en">PRODUCT SHOWCASE</span>
 	    	</div>
 	    	<div class="infoImg">
-	    		{{goodsGraphic.proIntro}}
+	    		<!-- {{goodsGraphic.proIntro}} -->
+	    		<img v-for="item in goodsGraphic" :src=item alt="">
 	    		<div v-html="goodsGraphic.proImgDetail"></div>
 	    	</div>
 	    </div>
@@ -36,7 +37,7 @@
 	export default{
 		data(){
 			return {
-				goodsGraphic:{}
+				goodsGraphic:["http://www.95599.cn/jiangsu/intro/jsweixintest/imgs/goldFlyer/105018801-1.PNG","http://www.95599.cn/jiangsu/intro/jsweixintest/imgs/goldFlyer/105018801-2.PNG","http://www.95599.cn/jiangsu/intro/jsweixintest/imgs/goldFlyer/105018801-3.PNG"]
 				
             }
 		},
@@ -45,7 +46,7 @@
 	        loadGoodsGraphic(){
 	        	let vm = this
 		          	vm.$store.dispatch('FETCH_MALL_GOODSGRAPHIC').then(()=>{
-		            	vm.goodsGraphic = vm.$store.getters.activeGoodsGraphic
+		            	vm.goodsGraphic = ["http://www.95599.cn/jiangsu/intro/jsweixintest/imgs/goldFlyer/105018801-1.PNG","http://www.95599.cn/jiangsu/intro/jsweixintest/imgs/goldFlyer/105018801-2.PNG","http://www.95599.cn/jiangsu/intro/jsweixintest/imgs/goldFlyer/105018801-3.PNG"]
 		          })
 	        }
 		},
@@ -55,7 +56,7 @@
 	        ])
 	    },
 		mounted(){
-			this.loadGoodsGraphic()
+			// this.loadGoodsGraphic()
 		}
 	}
 </script>

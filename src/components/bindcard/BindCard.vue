@@ -103,6 +103,7 @@
 			commitAddInfo(){
 				let vm = this,openid=JSON.parse(sessionStorage.getItem('wx_info')).openid,location = {}
 				let wx_info = JSON.parse(sessionStorage.getItem('wx_info'))
+				vm.configWxjssdk()
 				wx.getLocation({
 				    type: 'wgs84', 
 				    success: function (res) {
@@ -122,6 +123,7 @@
 							lng:longitude,//经度
 							changeWxUser:false
 						}
+						alert(openid)
 						vm.checkInfo(body,openid)
 				    },
 				    cancel: function (res) {
@@ -139,7 +141,21 @@
 						}
 						vm.checkInfo(body,openid)
 				    },
-					fail: function(){}
+					fail: function(err){
+						let body = {
+							cardNo:vm.cardData.cardNo,
+							idCardNo:vm.cardData.idCardNo,
+							phone:vm.cardData.phone,
+							code:vm.cardData.code,
+							custName:vm.cardData.custName,
+							openId:wx_info.openid,
+							regEntry:wx_info.appid,
+							lat:'0',//纬度
+							lng:'0',//经度
+							changeWxUser:false
+						}
+						vm.checkInfo(body,openid)
+					}
 				})
 				
 				

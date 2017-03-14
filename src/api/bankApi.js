@@ -15,7 +15,7 @@ export function GetUserInfoById(){
 			method:'post',
 			url:API_ROOT+'WeiBank/GetwxUser',
 			data:{
-				openid:keyid
+				openid:JSON.parse(sessionStorage.getItem('wx_info')).openid
 			}
 		}).then((resp) =>{
 			resolve(resp)
@@ -48,7 +48,7 @@ export function GetWeiBankIndexByCity(body){
 			method:'post',
 			url:API_ROOT+'WeiBank/GetWeiBankMenu',
 			data:{
-				openid:keyid,
+				openid:JSON.parse(sessionStorage.getItem('wx_info')).openid,
 				newCity:body.city
 			}
 		}).then((resp) =>{

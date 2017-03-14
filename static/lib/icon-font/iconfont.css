@@ -1,10 +1,10 @@
 
 @font-face {font-family: "iconfont";
-  src: url('iconfont.eot?t=1488788189100'); /* IE9*/
-  src: url('iconfont.eot?t=1488788189100#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('iconfont.woff?t=1488788189100') format('woff'), /* chrome, firefox */
-  url('iconfont.ttf?t=1488788189100') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-  url('iconfont.svg?t=1488788189100#iconfont') format('svg'); /* iOS 4.1- */
+  src: url('iconfont.eot?t=1489199612901'); /* IE9*/
+  src: url('iconfont.eot?t=1489199612901#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1489199612901') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1489199612901') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1489199612901#iconfont') format('svg'); /* iOS 4.1- */
 }
 
 .iconfont {
@@ -17,11 +17,15 @@
 
 .icon-saoyisao:before { content: "\e631"; }
 
+.icon-modify:before { content: "\e634"; }
+
 .icon-wo:before { content: "\e60f"; }
 
 .icon-minus:before { content: "\e81d"; }
 
 .icon-plus:before { content: "\e81e"; }
+
+.icon-shizhong:before { content: "\e610"; }
 
 .icon-jiahy:before { content: "\e79e"; }
 

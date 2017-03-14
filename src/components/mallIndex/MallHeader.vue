@@ -1,6 +1,6 @@
 <!-- 微银行首页轮播图 -->
 <template>
-	<div class="header">
+	<div class="index-header">
         <div class="header-info">
         	<span class="area-info" v-tap="{methods:selectcity}">
         		{{areaInfo.city | CityName}}
@@ -54,7 +54,7 @@
 	}
 </script>
 <style lang='scss'>
-	.header{
+	.index-header{
 		.swiper-container{
 			height: 3.826667rem;
 			.swiper-slide{
@@ -74,13 +74,14 @@
 			display: flex;
 			z-index: 10;
 			color: #fff;
-			padding: 0.4rem 0.4rem 0 0.4rem;
-			height: 0.933333rem;
+			padding: 0.2rem 0.4rem 0.6rem 0.4rem;
+			height: 1.333333rem;
+			background-image: linear-gradient(to top, rgba(255, 255, 255, 0.01) 0%, rgba(0, 0, 0, 0.1) 35%, rgba(0, 0, 0, 0.28) 98%, #FFFFFF 100%); 
 			.area-info{
 				width: 1.8rem;
 				font-size: 0.373333rem;
 				position: relative;
-				bottom: 1px;
+				bottom: -0.04rem;
 				.icon-xia1{
 					font-size: 0.32rem;
 				}
@@ -90,19 +91,21 @@
 				font-size: 0.4rem;
 				width: 6.533333rem;
 				display: flex;
-				align-items: flex-end;
+				position: relative;
+				/*align-items: flex-end;*/
+				top:-0.013333rem;
 				justify-content: center;
 			}
 			.rightInfo{
 				width: 1.8rem;
-				font-size: 12px;
+				font-size: 0.32rem;
 				position: relative;
-				bottom: 3px;
+				bottom: 0.08rem;
 				.userInfo{
 					width: 1.8rem;
-					font-size: 12px;
+					font-size: 0.32rem;
 					position: absolute;
-					top:-4px;
+					top:-0.026667rem;
 					text-align: right;
 					.name,.otherinfo{
 						width: 100%;
@@ -111,7 +114,7 @@
 						white-space: nowrap;
 					}
 					.iconfont{
-						font-size: 12px;
+						font-size: 0.32rem;
 						padding-right: 0.053333rem;
 					}
 				}

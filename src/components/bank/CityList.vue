@@ -44,6 +44,9 @@
 	        	}
 	        	vm.$store.dispatch('FETCH_BANK_BUSINESS_BYCITY',body).then(()=>{
 	        		vm.areaInfo.city = params.city.name+'市'
+	        		let allInfo = JSON.parse(sessionStorage.getItem('wx_info'))
+	        		allInfo.defAreaCode=params.city.id
+	        		sessionStorage.setItem('wx_info',JSON.stringify(allInfo))
 					vm.$router.push({name:'BankIndex'})
 				})
 	        	

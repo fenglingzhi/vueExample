@@ -71,13 +71,14 @@
 			display: flex;
 			z-index: 10;
 			color: #fff;
-			padding: 0.4rem 0.4rem 0 0.4rem;
-			height: 0.933333rem;
+			padding: 0.2rem 0.4rem 0.6rem 0.4rem;
+			height: 1.333333rem;
+			background-image: linear-gradient(to top, rgba(255, 255, 255, 0.01) 0%, rgba(0, 0, 0, 0.1) 35%, rgba(0, 0, 0, 0.28) 98%, #FFFFFF 100%);  
 			.area-info{
 				width: 1.333333rem;
 				font-size: 0.373333rem;
 				position: relative;
-				bottom: 1px;
+				bottom: -0.04rem;
 				.icon-xia1{
 					font-size: 0.32rem;
 				}
@@ -87,14 +88,16 @@
 				font-size: 0.4rem;
 				width: 6.533333rem;
 				display: flex;
-				align-items: flex-end;
+				position: relative;
+				/*align-items: flex-end;*/
+				top:-0.013333rem;
 				justify-content: center;
 			}
 			.icon-saoyisao{
 				width: 1.333333rem;
 				font-size: 20px;
 				position: relative;
-				bottom: 3px;
+				bottom: -0.026667rem;
 				text-align: right;
 			}
 		}

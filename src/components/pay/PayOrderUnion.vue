@@ -3,11 +3,15 @@
     <div class="PayOrderUnion">
         <pay-order-model></pay-order-model>
         <mt-cell title="付款方式" is-link value="" v-tap="{ methods : open}" v-for="data in cards">
-          <span  size="large">{{defaultcard}}</span>
+          <span  size="large">{{cardshow}}</span>
         </mt-cell>
-        <mt-popup v-model="CardList" position="bottom" class="card_list_model" v-tap="{methods : selectedCard}">
+        <mt-popup v-model="CardList" position="bottom" class="card_list_model">
+            <div class="opt-area">
+                <span v-tap="{methods:selectNum}">完成</span>
+            </div>
 			<mt-picker :slots="cards"  @change="onValuesChange" :visible-item-count="5" :show-toolbar="false"></mt-picker>
 		</mt-popup>
+        <pay-check-info></pay-check-info>
         <div class="pay_confirm" v-tap="{methods:payConfirm}">
             确认付款
         </div>
@@ -15,6 +19,7 @@
 </template>
 <script>
     import PayOrderModel from './PayOrderModel'
+    import PayCheckInfo from './PayCheckInfo'
     import { Popup } from 'mint-ui'
     import { Picker } from 'mint-ui'
     import * as api from '../../api/payApi'
@@ -30,11 +35,13 @@
                         textAlign: 'left',
                     }
                 ],
-                defaultcard:'中国农业银行(6090)'//默认快捷支付卡
+                cardnum:'',//默认快捷支付卡
+                cardshow:''
             };
         },
         components:{
-            PayOrderModel
+            PayOrderModel,
+            PayCheckInfo
         },
         methods:{
         	payConfirm(){
@@ -42,15 +49,14 @@
         	},
             //切换支付卡
             onValuesChange(picker, values) {
-                this.defaultcard = values[0]
+                this.cardshow = values[0];
+            },
+            selectNum(){
+                this.CardList = false;
             },
             //打开弹层
             open(){
                 this.CardList = true;
-            },
-            //选择快捷支付卡
-            selectedCard(){
-                this.CardList = false;
             },
             //获取快捷支付卡列表
             getPayCardList(){
@@ -64,7 +70,7 @@
                             //将对象转换为数组格式
                             cardinfo.push(cardname + cardnum);
                             this.cards[0].values = cardinfo;
-                        } 
+                        }
                     }
                 })  
                 
@@ -105,6 +111,30 @@
         }
         .mint-cell{
             width: 100%;
+        }
+        .opt-area{
+            position: relative;
+            width: 100%;
+            box-sizing: border-box;
+            text-align: right;
+            padding:0.266667rem 0;
+            &::after{
+                content: " ";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 1px;
+                border-bottom: 1px solid #D9D9D9;
+                color: #D9D9D9;
+                -webkit-transform: scaleY(0.5);
+                        transform: scaleY(0.5);
+            }
+
+            span{
+                padding: 0.266667rem 0.4rem;
+                font-size: 0.4rem;
+            }
         }
     }
 </style>

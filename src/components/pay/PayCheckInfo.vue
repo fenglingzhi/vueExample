@@ -8,8 +8,8 @@
 			<span class="get_code" v-tap="{methods:getCode}" v-show="showAccessButton">{{showAccessTip}}</span>
     		<span class="reset_code" v-show="!showAccessButton">{{countdown}}秒后重发</span>
     	</mt-field>
-    	<div class="confirm" v-tap="{methods:confirm}">确认</div>
-    	<div class="cancel" v-tap="{methods:cancel}">取消</div>
+    	<!-- <div class="confirm" v-tap="{methods:confirm}">确认</div>
+    	<div class="cancel" v-tap="{methods:cancel}">取消</div> -->
     </div>
 </template>
 <script>

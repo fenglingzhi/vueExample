@@ -69,7 +69,7 @@
 		.service_container{
 			background-color: #fff;
 			.list-caption-title{
-				padding:0.706667rem 0 0.346667rem;
+				padding:0.3rem 0 0.2rem;
 				font-size:0.373333rem;
 				display:flex;
 				.title-icon{

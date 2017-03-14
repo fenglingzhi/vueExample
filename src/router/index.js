@@ -27,6 +27,12 @@ const BindError = resolve => require(['../components/bindcard/BindError'],resolv
 const UnbindError = resolve => require(['../components/bindcard/UnbindError'],resolve)
 const UnbindCard = resolve => require(['../components/bindcard/UnbindCard'],resolve)
 
+// 订单组件
+const UnpaidDetail = resolve => require(['../components/mallOrder/UnpaidDetail'],resolve)
+const PaidDetail = resolve => require(['../components/mallOrder/PaidDetail'],resolve)
+const ReceivedDetail = resolve => require(['../components/mallOrder/ReceivedDetail'],resolve)
+const FailedDetail = resolve => require(['../components/mallOrder/FailedDetail'],resolve)
+
 // 支付平台组件
 const CheckCardInfo = resolve => require(['../components/pay/CheckCardInfo'],resolve)
 const FetchCardType = resolve => require(['../components/pay/FetchCardType'],resolve)
@@ -38,6 +44,8 @@ const PayCheckInfo = resolve => require(['../components/pay/PayCheckInfo'],resol
 const PayOrderShort = resolve => require(['../components/pay/PayOrderShort'],resolve)
 const PayOrderUnion = resolve => require(['../components/pay/PayOrderUnion'],resolve)
 const PaySuccess = resolve => require(['../components/pay/PaySuccess'],resolve)
+const PayPlatform = resolve => require(['../components/pay/PayPlatform'],resolve)
+
 
 const scrollBehavior = (to, from, savedPosition) => {
   if (savedPosition) {
@@ -94,6 +102,10 @@ const router = new Router({
         {name:'GoodsDetail',path:'/goodsDetail',component:GoodsDetail},
         {name:'GraphicDetail',path:'/graphicDetail',component:GraphicDetail},
         {name:'OrderDetail',path:'/orderDetail',component:OrderDetail},
+        {name:'UnpaidDetail',path:'/unpaidDetail/:orderid',component:UnpaidDetail},
+        {name:'PaidDetail',path:'/paidDetail/:orderid',component:PaidDetail},
+        {name:'ReceivedDetail',path:'/receivedDetail/:orderid',component:ReceivedDetail},
+        {name:'FailedDetail',path:'/failedDetail/:orderid',component:FailedDetail},
         {name:'CheckCardInfo',path:'/checkCardInfo',component:CheckCardInfo},
         {name:'FetchCardType',path:'/fetchCardType',component:FetchCardType},
         {name:'FetchProtocol',path:'/fetchProtocol',component:FetchProtocol},
@@ -104,6 +116,7 @@ const router = new Router({
         {name:'PayOrderShort',path:'/payOrderShort',component:PayOrderShort},
         {name:'PayOrderUnion',path:'/payOrderUnion',component:PayOrderUnion},
         {name:'PaySuccess',path:'/paySuccess',component:PaySuccess},
+        {name:'PayPlatform',path:'/PayPlatform',component:PayPlatform},
         {path: '*', redirect: '/bank/bankIndex'}
 	]
 })

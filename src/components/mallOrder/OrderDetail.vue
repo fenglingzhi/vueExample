@@ -1,6 +1,9 @@
 <!-- 订单详情页（购物模板） -->
 <template>
 	<div class="order_detail" :class="{'order_fix':fixedkey}" :style="{top:-pos_top+'px'}">
+		<!-- <div class="wrapper" :class="{'order_fix':fixedkey}" :style="{top:-pos_top+'px'}"> -->
+			
+		
 		<mt-header title="确认订单">
 	      	<span v-tap.prevent="{ methods : back}" slot="left">
 	        	<mt-button icon="back"></mt-button>
@@ -32,7 +35,7 @@
 	        </mt-cell>
 	        <mt-cell  title="提货日期"  is-link value="" v-tap="{ methods : open,type:'del_date' }">
 		    	<span v-if="form.date == ''">请选择预计提货日期</span>
-		    	<span v-else>{{form.date | timeCon}}</span>
+		    	<span v-else>{{form.date}}</span>
 	        </mt-cell>
 	        <mt-field label="推荐人" placeholder="选填" type="text" v-model="form.referee"></mt-field>
 	    </div>
@@ -79,7 +82,20 @@
 		    	<span>{{showInfo.del_bill}}</span>
 	        </mt-cell>
 	    </div>
-	    <div class="del_price ratain-border">
+	    <div class="del_bill"  v-show="form.del_bill=='1'">
+	    	<mt-field label="发票抬头" placeholder="请输入发票抬头信息" v-model="form.del_bill_head"></mt-field>
+	    </div>
+	    
+	    <div class="list-caption-title">
+			<div class="title-icon"></div>
+			<span class="title-name">备注：</span>
+		</div>
+		
+	    <div class="pay_tip">
+	    	<textarea class="ratain-box" placeholder="如对商品规格、颜色有要求，请留言" v-model="form.remark"></textarea>
+	    </div>
+	    <div class="price_wrapper">
+	    	<div class="del_price ratain-border">
 	    	<div>
 	    		<span>商品总额</span>
 	    		<span class="price">￥{{showInfo.goodInfo.realprice*goodNum | tofixtwo}}</span>
@@ -96,19 +112,15 @@
 	    		<span>小计</span>
 	    		<span class="price">￥{{(showInfo.goodInfo.realprice-showInfo.goodInfo.free)*goodNum | tofixtwo}}</span>
 	    	</div>
+	    	</div>
 	    </div>
-	    <div class="list-caption-title">
-			<div class="title-icon"></div>
-			<span class="title-name">备注：</span>
-		</div>
-	    <div class="pay_tip">
-	    	<textarea class="ratain-box" placeholder="如对商品规格、颜色有要求，请留言"></textarea>
-	    </div>
+	    <!-- </div> -->
+	    
 	    <footer>
 	    	<div class="info ratain-border-top">
 	    		共<span class="keyInfo">{{goodNum}}</span>件，实付款<span class="keyInfo">￥{{(showInfo.goodInfo.realprice-showInfo.goodInfo.free)*goodNum | tofixtwo}}</span>
 	    	</div>
-	      	<div class="submitOrder" v-tap.prevent="{ methods : submitOrder}" >
+	      	<div class="submitOrder" v-tap.prevent="{ methods : commitData}" >
 	        	提交订单
 	      	</div>
 	    </footer>
@@ -116,7 +128,8 @@
 	    	<div class="pop_container">
 	    		<div class="pop_title">选择区域</div>
 	    		<!-- 取消则移除dom -->
-	    		<radio-list v-if="del_area" class="radio-list" :options="del_area_options" :defaultProps="del_area_defalut" v-model="form.del_area" @chooseNode="chooseInfo"></radio-list>
+	    			<radio-list v-if="del_area" class="radio-list" :options="del_area_options" :defaultProps="del_area_defalut" v-model="form.del_area" @chooseNode="chooseInfo"></radio-list>
+	    		
 		    	<footer>
 		    		<div class="cancel" v-tap="{ methods : cancel, type:'del_area'}" >
 				        取消
@@ -132,6 +145,7 @@
 	    <mt-popup v-model="del_dot" position="bottom" >
 	    	<div class="pop_container">
 	    		<div class="pop_title">选择网点</div>
+	    			
 	    		<radio-list v-if="del_dot" class="radio-list" :options="del_dot_options" :defaultProps="del_dot_default" v-model="form.del_dot" @chooseNode="chooseInfo"></radio-list>
 		    	<footer>
 		    		<div class="cancel" v-tap="{ methods : cancel, type:'del_dot'}" >
@@ -146,7 +160,8 @@
 	    <mt-popup v-model="del_consignee" position="bottom" >
 	    	<div class="pop_container">
 	    		<div class="pop_title">提货方式</div>
-	    		<radio-list v-if="del_consignee" class="radio-list" :options="del_consignee_options" :defaultProps="del_consignee_default" v-model="form.del_consignee" @chooseNode="chooseInfo"></radio-list>
+	    			<radio-list v-if="del_consignee" class="radio-list" :options="del_consignee_options" :defaultProps="del_consignee_default" v-model="form.del_consignee" @chooseNode="chooseInfo"></radio-list>
+	    		
 		    	<footer>
 		    		<div class="cancel" v-tap="{ methods : cancel, type:'del_consignee'}" >
 			        	取消
@@ -160,7 +175,8 @@
 	    <mt-popup v-model="del_pay" position="bottom" >
 	    	<div class="pop_container">
 	    		<div class="pop_title">支付方式</div>
-	    		<radio-list v-if="del_pay" class="radio-list" :options="del_pay_options"  v-model="form.del_pay" @chooseNode="chooseInfo"></radio-list>
+	    			<radio-list v-if="del_pay" class="radio-list" :options="del_pay_options"  v-model="form.del_pay" @chooseNode="chooseInfo"></radio-list>
+	    		
 		    	<footer>
 		    		<div class="cancel" v-tap="{ methods : cancel, type:'del_pay'}" >
 			        	取消
@@ -174,7 +190,9 @@
 	    <mt-popup v-model="del_bill" position="bottom" >
 	    	<div class="pop_container">
 	    		<div class="pop_title">支付方式</div>
-	    		<radio-list v-if="del_bill" class="radio-list" :options="del_bill_options"  v-model="form.del_bill" @chooseNode="chooseInfo"></radio-list>
+	    		
+	    			<radio-list v-if="del_bill" class="radio-list" :options="del_bill_options"  v-model="form.del_bill" @chooseNode="chooseInfo"></radio-list>
+	    		
 		    	<footer>
 		    		<div class="cancel" v-tap="{ methods : cancel, type:'del_bill'}" >
 			        	取消
@@ -185,21 +203,13 @@
 			    </footer>
 	    	</div>	
 	    </mt-popup>
-	    <!-- TODO:datetime-picker尚未做固定 -->
 	    <mt-popup v-model="del_date" position="bottom" >
 	    	<div class="pop_container">
 	    		<div class="pop_title">提货日期</div>
-	    		<mt-datetime-picker
-				  type="date"
-				  v-model="tempdate"
-				  :start-date="startDate"
-				  year-format="{value} 年"
-				  month-format="{value} 月"
-				  date-format="{value} 日">
-				  
-				</mt-datetime-picker>
+	    			<radio-list v-if="del_date" class="radio-list" :options="del_date_options"  v-model="form.date" @chooseNode="chooseInfo"></radio-list>
+	    		
 		    	<footer>
-		    		<div class="cancel" v-tap="{ methods : cancelDate}" >
+		    		<div class="cancel" v-tap="{ methods : cancel, type:'del_date'}" >
 			        	取消
 			      	</div>
 			      	<div class="sure" v-tap="{ methods : chooseDelDate}" >
@@ -224,9 +234,10 @@
 				cur_type:'',
 				startDate:new Date(),
 				goodNum:'2',
-				tempdata:new Date(),
+				tempdate:new Date(),
 				showInfo:{
 					goodInfo:{},
+					tets:'',
 					del_area:'',
 					del_dot:'',
 					del_detail_address:'',
@@ -240,7 +251,7 @@
 					referee:'',
 					del_area:'',
 					del_dot:'',
-					date:new Date(),
+					date:'',
 					contactPhone:'',
 					code:'',
 					del_consignee:'',
@@ -248,7 +259,9 @@
 					consignee_certid:'',
 					consignee_phone:'',
 					del_pay:'',
-					del_bill:''
+					del_bill:'',
+					del_bill_head:'',//发票抬头信息
+					remark:''//备注
 				},
 				pos_top:0,//记录背景滑动位置
 				del_area:false,//区域弹窗控制
@@ -274,6 +287,7 @@
 				},
 				del_pay_options:[],//付款方式列表
 				del_bill_options:[],//发票信息列表
+				del_date_options:[],
 				tempdata:'',//选择data临时变量
 			}
 		},
@@ -281,6 +295,34 @@
 			RadioList
 		},
 		methods:{
+			commitData(){
+				let vm = this
+				// let wx_info = JSON.parse(sessionStorage.getItem('wx_info'))
+				let postData = {
+					openid:'oxmudxLXzqKWTSnZ8ikaJscicl-Y',
+					areaCode:'01',
+					productCode:'000000000009',
+					productSubCode:'01',
+					num:'1',
+					isSelf:vm.form.del_consignee,
+					bank:'5559',
+					quittanceType:vm.form.del_bill,
+					quittanceTitle:vm.form.del_bill_head,
+					paymentWay:vm.form.del_pay,
+					contactPhone:vm.form.contactPhone,
+					getterPhone:vm.form.consignee_phone,
+					getterName:vm.form.consignee_name,
+					getterIdCardNum:vm.form.consignee_certid,
+					reference:vm.form.referee,
+					appointmentExchangeDate:vm.form.date,
+					salesMode:'1',
+					remark:vm.form.remark,
+					code:vm.code
+				}
+				// api.GoldBooking(postData).then(resp=>{
+				// 	console.log(resp)
+				// })
+			},
 			loadInfo(){
 				let vm = this
 				vm.getOrderArea()
@@ -288,6 +330,16 @@
 				vm.getOrderPay()
 				vm.getOrderBill()
 				vm.getGoodInfo()
+				vm.getOrderDate()
+			},
+			getOrderDate(){
+				let vm = this
+				api.getOrderDate().then((resp)=>{
+					if(resp.data.result == 0){
+						vm.del_date_options = resp.data.data
+						vm.form.date = resp.data.data[0].value
+					}
+				})
 			},
 			// 初始化商品信息,todo:根据商品id查询
 			getGoodInfo(){
@@ -388,9 +440,6 @@
 					}
 				},1000)
 			},
-			submitOrder(){
-
-			},
 			//配合fixedkey使用
 			open(params){
 				this[params.type]=true
@@ -408,41 +457,54 @@
 			},
 	        chooseDelArea(){
 	        	let vm = this
-	        	vm.form.del_area = vm.tempdata.value
-				vm.showInfo.del_area = vm.tempdata.label
-				vm.getOrderDot(vm.form.del_area)
+	        	if(vm.tempdata!=''){
+	        		vm.form.del_area = vm.tempdata.value
+					vm.showInfo.del_area = vm.tempdata.label
+					vm.getOrderDot(vm.form.del_area)
+	        	}
 				vm.del_area=false
 	        },
 	        chooseDelDot(){
 	        	let vm = this
-	        	vm.form.del_dot = vm.tempdata.value
-				vm.showInfo.del_dot = vm.tempdata.label
-				vm.showInfo.del_detail_address = vm.tempdata.address
-				vm.showInfo.del_phone = vm.tempdata.phone
-				console.log(vm.tempdata)
+	        	if(vm.tempdata!=''){
+	        		vm.form.del_dot = vm.tempdata.value
+					vm.showInfo.del_dot = vm.tempdata.label
+					vm.showInfo.del_detail_address = vm.tempdata.address
+					vm.showInfo.del_phone = vm.tempdata.phone
+	        	}
+	        	
 				vm.del_dot=false
 	        },
 	        chooseDelConsignee(){
 	        	let vm = this
-	        	vm.form.del_consignee = vm.tempdata.value
-	        	vm.showInfo.del_consignee = vm.tempdata.label
+	        	if(vm.tempdata!=''){
+		        	vm.form.del_consignee = vm.tempdata.value
+		        	vm.showInfo.del_consignee = vm.tempdata.label
+	        	}
 	        	vm.del_consignee = false
 	        },
 	        chooseDelPay(){
 	        	let vm = this
-	        	vm.form.del_pay = vm.tempdata.value
-	        	vm.showInfo.del_pay = vm.tempdata.label
+	        	if(vm.tempdata!=''){
+		        	vm.form.del_pay = vm.tempdata.value
+		        	vm.showInfo.del_pay = vm.tempdata.label
+	        	}
 	        	vm.del_pay = false
 	        },
 	        chooseDelBill(){
 	        	let vm = this
-	        	vm.form.del_bill = vm.tempdata.value
-	        	vm.showInfo.del_bill = vm.tempdata.label
+	        	if(vm.tempdata!=''){
+	        		vm.form.del_bill = vm.tempdata.value
+	        		vm.showInfo.del_bill = vm.tempdata.label
+	        	}
+	        	
 	        	vm.del_bill = false
 	        },
 	        chooseDelDate(){
 	        	let vm = this
-	        	this.form.date = vm.tempdate
+	        	if(vm.tempdata!=''){
+	        		this.form.date = vm.tempdata.value
+	        	}
 	        	vm.del_date = false
 	        }
 		},
@@ -459,6 +521,7 @@
 	            this.removeClass(app,'app_fix')
 	            // 移动端生效
 	            document.body.scrollTop  = this.pos_top
+	            this.tempdata=''
 	            this.removePopup()
 	          }
 	          return this[this.cur_type]
@@ -491,6 +554,7 @@
 <style lang='scss'>
 	@import '../../../static/lib/base/config.scss';
 	.order_detail{
+		
 		.mint-field .mint-cell-title{
       		width: 1.866667rem;
       	}
@@ -570,6 +634,9 @@
 	    .del_bill .mint-cell-value span{
 	    	color: rgb(249,83,45);
 	    }
+	    .price_wrapper{
+	    	/*padding-bottom: 1.333333rem;*/
+	    }
 	    .del_price{
 	    	height: 4.666667rem;
 	    	background-color: #fff;
@@ -588,7 +655,7 @@
 	    	}
 	    }
 	    .pay_tip{
-	    	padding-bottom: 1.866667rem;
+	    	
 	    	textarea{
 				margin:0 0.2rem;
 				padding: 0.333333rem 0.4rem;
@@ -621,8 +688,8 @@
 			}
 	    }
 	    footer{
-	      position: fixed;
-	      bottom: 0;
+	      /*position: fixed;
+	      bottom: 0;*/
 	      width: 100%;
 	      height: 1.333333rem;
 	      line-height: 1.333333rem;
@@ -652,13 +719,6 @@
 		    .pop_container{
 		    	overflow-y: auto;
 		    	height: 100%;
-		    	.mint-datetime{
-		    		display: block !important;
-		    		top: 0;
-		    		.picker-toolbar{
-		    			display: none;
-		    		}
-		    	}
 		    	.pop_title{
 			    	text-align: center;
 			    	padding: 0.533333rem 0 0.4rem;
@@ -670,8 +730,11 @@
 			    	color: rgb(81,81,81);
 			    	font-weight: 600;
 			    }
-		    	.radio-list{
+
+
+		    	.radio_list{
 		    		padding: 1.36rem 0 1.68rem;
+		    		
 			    }
 			    footer{
 			      position: fixed;
@@ -702,10 +765,11 @@
 			    }
 		    }
 		}
-	},
+	}
 	.order_fix{
 			position: fixed;
 			left: 0;
 			right: 0;
 		}
+	
 </style>

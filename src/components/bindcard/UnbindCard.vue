@@ -5,7 +5,7 @@
 		        <mt-button icon="back"></mt-button>
 		    </span>
     	</mt-header>
-		<mt-cell title="选择绑定卡号" is-link value="" v-tap="{ methods : open}" v-for='data in values'>
+		<mt-cell title="选择绑定卡号" is-link value="" v-tap="{ methods : open}">
 		  <span  size="large">{{curNum}}</span>
 		</mt-cell>
 		<footer>

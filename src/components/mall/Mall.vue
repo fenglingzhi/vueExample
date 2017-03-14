@@ -1,7 +1,7 @@
 <template>
   <div class="mall">
     <router-view></router-view>
-    <mt-tabbar v-model="selected" :fixed="fixed">
+    <mt-tabbar v-model="selected" class="ratain-border-top" :fixed="fixed">
       <mt-tab-item id="MallIndex" v-tap="{methods:changeTab,tabName:'MallIndex'}">
         <i slot="icon" class="icon iconfont icon-shouyeshouye"></i>
         首页

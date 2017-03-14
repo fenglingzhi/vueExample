@@ -5,6 +5,18 @@ import {
 	API_ROOT
 } from '../config'
 
+// 获取微商盟首页信息
+export function getMallIndex(){
+	return new Promise((resolve,reject) => {
+		axios({
+			method:'get',
+			url:'./static/json/mallIndex.json'
+		}).then((resp) =>{
+			resolve(resp)
+		},reject)
+	})
+}
+
 // 获取首页热门商品
 export function getIndexGoodsList(){
 	return new Promise((resolve,reject) => {
@@ -59,7 +71,20 @@ export function getGoodsGraphic(){
 	return new Promise((resolve,reject) => {
 		axios({
 			method:'get',
-			url:'./static/json/graphicDetail.json'
+			url:API_ROOT+'WeiStore/GetProductImgInfo?productCode=000000000008'
+		}).then((resp) =>{
+			resolve(resp)
+
+		},reject)
+	}) 
+}
+
+// 获取时间列表
+export function getOrderDate() {
+	return new Promise((resolve,reject) => {
+		axios({
+			method:'get',
+			url:'./static/json/orderDate.json'
 		}).then((resp) =>{
 			resolve(resp)
 
@@ -143,5 +168,66 @@ export function getGoodDetail(){
 
 		},reject)
 	}) 
+}
+
+// 获取订单列表
+export function getOrderList(type,number){
+	return new Promise((resolve,reject) => {
+		axios({
+			method:'get',
+			url:'./static/json/OrderList.json'
+		}).then((resp) =>{
+			resolve(resp)
+
+		},reject)
+	}) 
+}
+
+// 查询未支付订单详情
+export function getUnpaidDetail(orderid){
+	return new Promise((resolve,reject) => {
+		axios({
+			method:'get',
+			url:'./static/json/UnpaidOrderDetail.json'
+		}).then((resp) =>{
+			resolve(resp)
+
+		},reject)
+	}) 
+}
+
+// 下单
+export function GoldBooking(data){
+	return new Promise((resolve,reject)=>{
+		axios({
+			method:'post',
+			url:API_ROOT+'/weiStore/GoldBooking',
+			data:{
+				openid:data.openid,
+				areaCode:data.areaCode,
+				productCode:data.productCode,
+				productSubCode:data.productSubCode,
+				num:data.num,
+				isSelf:data.isSelf,
+				bank:data.bank,
+				quittanceType:data.quittanceType,
+				quittanceTitle:data.quittanceTitle,
+				paymentWay:data.paymentWay,
+				contactPhone:data.contactPhone,
+				getterPhone:data.getterPhone,
+				getterName:data.getterName,
+				getterIdCardNum:data.getterIdCardNum,
+				reference:data.reference,
+				appointmentExchangeDate:data.appointmentExchangeDate,
+				salesMode:data.salesMode,
+				remark:data.remark,
+				code:data.code
+
+			}
+		}).then((resp) =>{
+			resolve(resp)
+
+		},reject)
+	})
 }
 

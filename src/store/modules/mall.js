@@ -7,10 +7,20 @@ const state = {
 	orderDetail:{},
 	mallIndexGoodsList:[],//首页热门商品
 	mallHeaderInfo:{},//首页地区，用户，轮播图信息
-	mallGoodsList:[]//商品列表数据
+	mallGoodsList:[],//商品列表数据
+	mallBusiness:{}//微商盟首页业务（轮播图，商户咨询，楼层，地区信息）
 }
 
 const actions = {
+	FETCH_MALL_BUSINESS:({commit,state})=>{
+		return api.getMallIndex()
+			.then(resp => {
+				if(resp.data.result === 0){
+					let Data = resp.data.data
+					commit('SET_MALL_BUSINESS',{Data})
+				}
+			})
+	},
 	FETCH_MALL_INDEX_GOODSLIST:({commit,state}) => {
 		return api.getIndexGoodsList()
 			.then(resp => {
@@ -66,6 +76,9 @@ const actions = {
 }
 
 const mutations = {
+	SET_MALL_BUSINESS:(state,{Data}) => {
+		state.mallBusiness = Data
+	},
 	SET_MALL_INDEX_GOODSLIST:(state,{Data}) => {
 		state.mallIndexGoodsList = Data
 	},
@@ -87,6 +100,9 @@ const mutations = {
 } 
 
 const getters = {
+	activemallBusiness(state){
+		return state.mallBusiness
+	},
 	activemallIndexGoodsList(state){
 		return state.mallIndexGoodsList
 	},

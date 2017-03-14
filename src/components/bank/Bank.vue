@@ -8,7 +8,7 @@
 		        <i slot="icon" class="icon iconfont icon-shouyeshouye"></i>
 		        首页
 		      </mt-tab-item>
-		      <mt-tab-item id="BankNearby" v-tap="{methods:changeTab,tabName:'BankNearby'}">
+		      <mt-tab-item id="BankNearby" v-tap="{methods:skipBank}">
 		        <i slot="icon" class="icon iconfont icon-fujin"></i>
 		        附近
 		      </mt-tab-item>
@@ -40,6 +40,9 @@
 					vm.configWxMenu()
 			    });
 				
+			},
+			skipBank(){
+				location.href="http://www.95599.cn/jiangsu/intro/jsweixintest/weixin/redirect1?appid=wxb280dffa14c0d7dd&state=03000005"
 			},
 			// 切换tab栏进行路由跳转
 			changeTab(params){

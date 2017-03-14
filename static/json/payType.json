@@ -1,0 +1,27 @@
+{
+  "result": 0,
+  "msg": "成功",
+  "data": [
+    {
+      "payid":"1",
+      "card_icon":"http://www.95599.cn/jiangsu/intro/jsweixintest/ABCWeJS/dist/static/img/payflat/wechat.png",
+      "card_name":"微信支付"
+    },{
+      "payid":"2",
+      "card_icon":"http://www.95599.cn/jiangsu/intro/jsweixintest/ABCWeJS/dist/static/img/payflat/alipay.png",
+      "card_name":"支付宝"
+    },{
+      "payid":"3",
+      "card_icon":"http://www.95599.cn/jiangsu/intro/jsweixintest/ABCWeJS/dist/static/img/payflat/unionpay.png",
+      "card_name":"银联支付"
+    },{
+      "payid":"4",
+      "card_icon":"http://www.95599.cn/jiangsu/intro/jsweixintest/ABCWeJS/dist/static/img/payflat/jd.png",
+      "card_name":"京东支付"
+    },{
+      "payid":"5",
+      "card_icon":"http://www.95599.cn/jiangsu/intro/jsweixintest/ABCWeJS/dist/static/img/payflat/baidupay.png",
+      "card_name":"百度钱包"
+    }
+  ]
+}

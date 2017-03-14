@@ -41,3 +41,27 @@ export function getCreditCardList(){
 		},reject)
 	}) 
 }
+
+// 支付方式列表
+export function getPayTypeList(){
+	return new Promise((resolve,reject) => {
+		axios({
+			method:'get',
+			url:'./static/json/payType.json'
+		}).then((resp) =>{
+			resolve(resp)
+		},reject)
+	}) 
+}
+
+// 商品详情列表
+export function getGoodsInfoList(){
+	return new Promise((resolve,reject) => {
+		axios({
+			method:'get',
+			url:'./static/json/merchantinfo.json'
+		}).then((resp) =>{
+			resolve(resp)
+		},reject)
+	}) 
+}

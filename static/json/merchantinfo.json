@@ -1,0 +1,31 @@
+{
+  "result": 0,
+  "msg": "成功",
+  "data": [
+    {
+      "merchant_name":"江苏省农行",
+      "goods_title":"“传世之宝”金银元宝",
+      "goods_material":"银",
+      "goods_weight":"100",
+      "goods_num":"1"
+    },{
+      "merchant_name":"江苏省农行",
+      "goods_title":"“传世之宝”金银元宝",
+      "goods_material":"银",
+      "goods_weight":"100",
+      "goods_num":"1"
+    },{
+      "merchant_name":"江苏省农行",
+      "goods_title":"“传世之宝”金银元宝",
+      "goods_material":"银",
+      "goods_weight":"100",
+      "goods_num":"1"
+    },{
+      "merchant_name":"江苏省农行",
+      "goods_title":"“传世之宝”金银元宝",
+      "goods_material":"银",
+      "goods_weight":"100",
+      "goods_num":"1"
+    }
+  ]
+}

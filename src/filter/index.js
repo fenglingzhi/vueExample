@@ -16,6 +16,13 @@ function starcover(value,start,end){
 	}
 }
 module.exports.install = function(Vue,options){
+	//转换订单状态
+	Vue.filter('toOrderState',(value)=>{
+		if(value){
+			let arr = ['未支付','已支付','已提货','支付失败']
+			return arr[Number(value)]
+		}
+	})
 	//保留小数点后两位
 	Vue.filter('tofixtwo',(value)=>{
 		if(value){
