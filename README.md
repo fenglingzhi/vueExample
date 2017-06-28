@@ -1,6 +1,6 @@
 # abcwebank
 
-> 江苏农行微银行
+> appExample
 
 ## Build Setup
 
